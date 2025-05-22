@@ -35,7 +35,7 @@ jobs:
           echo "this step runs a special script to clean up after the failed step"
           echo ${{ env.FORMAT_VAR }}
       - name: function and always status check
-        if: ${{ startwWith(env.aString,  'this') && always() }}
+        if: ${{ startsWith(env.aString,  'this') && always() }}
         run: sleep 60
       - name: ${{ cancelled() }}
         run: echo " this job runs if a workflow is cancelled, it can also be used for clean up scripts"
